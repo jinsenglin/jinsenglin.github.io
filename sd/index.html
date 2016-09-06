@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <script src="https://bramp.github.io/js-sequence-diagrams/js/raphael-min.js"></script>
+    <script src="https://bramp.github.io/js-sequence-diagrams/js/underscore-min.js"></script>
+    <script src="https://bramp.github.io/js-sequence-diagrams/js/sequence-diagram-min.js"></script>
+  </head>
+  <body>
+    <div id="diagram"></div>
+      <script>
+        var data = "A->B: Message";
+        data += "\nB->C: Message"
+        data += "\nC->A: Message"
+
+        var diagram = Diagram.parse(data);
+        diagram.drawSVG("diagram", {theme: 'hand'});
+      </script>
+    </div>
+  </body>
+</html>
