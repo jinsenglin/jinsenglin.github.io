@@ -33,6 +33,24 @@
                     heat -> db_backend; \
                     heat -> rpc_backend; \
                     heat -> keystone; \
+                    ceilometer -> db_backend; \
+                    ceilometer -> rpc_backend; \
+                    ceilometer -> keystone; \
+                    ceilometer -> http_server; \
+                    gnocchi -> db_backend; \
+                    gnocchi -> rpc_backend; \
+                    gnocchi -> keystone; \
+                    gnocchi -> http_server; \
+                    panko -> db_backend; \
+                    panko -> rpc_backend; \
+                    panko -> keystone; \
+                    panko -> http_server; \
+                    aodh -> db_backend; \
+                    aodh -> rpc_backend; \
+                    aodh -> keystone; \
+                    aodh -> http_server; \
+                    horizon -> keystone; \
+                    horizon -> http_server; \
                     ntp; \
             }';
             var parsedData = vis.network.convertDot(DOTstring);
