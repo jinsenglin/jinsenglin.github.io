@@ -4,13 +4,17 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis.min.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
+    <div id="information">
+      <div>db_backend e.g., mysql</div>
+      <div>rpc_backend e.g., rabbitmq</div>
+    </div>
     <div id="visualization"></div>
     <script>
             var container = document.getElementById('visualization');
             // provide data in the DOT language
             var DOTstring = 'dinetwork { \
-                    keystone -> db_backend(e.g., mysql); \
-                    keystone -> rpc_backend(e.g., rabbitmq); \
+                    keystone -> db_backend; \
+                    keystone -> rpc_backend; \
             }';
             var parsedData = vis.network.convertDot(DOTstring);
             var data = {
