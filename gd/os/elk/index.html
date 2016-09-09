@@ -1,0 +1,46 @@
+
+
+
+
+
+
+
+<html>
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div id="information">
+      <div>elk_kibana listens port 5601</div>
+      <div>elk_elasticsearch listens port 9200</div>
+      <div>elk_logstash listens port 5044</div>
+    </div>
+    <div id="visualization"></div>
+    <script>
+            var container = document.getElementById('visualization');
+            // provide data in the DOT language
+            var DOTstring = 'dinetwork { \
+                    elk_kibana -> elk; \
+                    elk_elasticsearch -> elk; \
+                    elk_logstash -> elk; \
+                    grok -> elk; \
+                    filebeat -> elk; \
+                    topbeat -> elk; \
+            }';
+            var parsedData = vis.network.convertDot(DOTstring);
+            var data = {
+                    nodes: parsedData.nodes,
+                    edges: parsedData.edges
+            }
+            var options = parsedData.options;
+            // you can extend the options like a normal JSON variable:
+            /*
+            options.nodes = {
+                    color: 'red'
+            }*/
+            // create a network
+            var network = new vis.Network(container, data, options);
+    </script>
+  </body>
+</html>
