@@ -55,6 +55,7 @@
                     horizon -> keystone; \
                     horizon -> http_frontend; \
                     grafana -> gnocchi; \
+                    ceph -> cinder; \
                     ntp; \
             }';
             var parsedData = vis.network.convertDot(DOTstring);
