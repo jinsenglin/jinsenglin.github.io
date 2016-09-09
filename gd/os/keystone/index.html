@@ -7,16 +7,16 @@
   </head>
   <body>
     <div id="information">
-      <div>keystone-public listens port 5000</div>
-      <div>keystone-admin listens port 35357</div>
+      <div>keystone_public listens port 5000</div>
+      <div>keystone_admin listens port 35357</div>
     </div>
     <div id="visualization"></div>
     <script>
             var container = document.getElementById('visualization');
             // provide data in the DOT language
             var DOTstring = 'dinetwork { \
-                    'keystone-public' -> keystone; \
-                    'keystone-admin' -> keystone; \
+                    keystone_public -> keystone; \
+                    keystone_admin -> keystone; \
             }';
             var parsedData = vis.network.convertDot(DOTstring);
             var data = {
