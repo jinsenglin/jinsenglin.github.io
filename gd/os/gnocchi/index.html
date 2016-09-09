@@ -20,6 +20,7 @@
             var container = document.getElementById('visualization');
             // provide data in the DOT language
             var DOTstring = 'dinetwork { \
+                    gnocchi -> gnocchi; \
                     gnocchi_api -> gnocchi; \
                     gnocchi_metricd -> gnocchi; \
                     gnocchi_statsd -> gnocchi; \
