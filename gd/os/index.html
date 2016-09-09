@@ -30,6 +30,9 @@
                     neutron -> db_backend; \
                     neutron -> rpc_backend; \
                     neutron -> keystone; \
+                    heat -> db_backend; \
+                    heat -> rpc_backend; \
+                    heat -> keystone; \
                     ntp; \
             }';
             var parsedData = vis.network.convertDot(DOTstring);
