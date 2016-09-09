@@ -21,6 +21,15 @@
                     glance -> db_backend; \
                     glance -> rpc_backend; \
                     glance -> keystone; \
+                    nova -> db_backend; \
+                    nova -> rpc_backend; \
+                    nova -> keystone; \
+                    cinder -> db_backend; \
+                    cinder -> rpc_backend; \
+                    cinder -> keystone; \
+                    neutron -> db_backend; \
+                    neutron -> rpc_backend; \
+                    neutron -> keystone; \
                     ntp; \
             }';
             var parsedData = vis.network.convertDot(DOTstring);
