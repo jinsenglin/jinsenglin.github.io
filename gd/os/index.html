@@ -54,6 +54,7 @@
                     aodh -> ceilometer; \
                     horizon -> keystone; \
                     horizon -> http_server; \
+                    grafana -> gnocchi; \
                     ntp; \
             }';
             var parsedData = vis.network.convertDot(DOTstring);
