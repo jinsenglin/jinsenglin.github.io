@@ -1,0 +1,45 @@
+
+
+
+
+
+<html>
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div id="information">
+      <div>neutron_server listens port 9696</div>
+      <div>neutron_metering_agent (not enabled yet in my devstack)</div>
+    </div>
+    <div id="visualization"></div>
+    <script>
+            var container = document.getElementById('visualization');
+            // provide data in the DOT language
+            var DOTstring = 'dinetwork { \
+                    neutron_server -> neutron; \
+                    neutron_dhcp_agent -> neutron; \
+                    neutron_metadata_agent -> neutron; \
+                    neutron_l3_agent -> neutron; \
+                    neutron_metering_agent -> neutron; \
+                    neutron_openvswitch_agent -> neutron; \
+                    neutron_vpn_agent -> neutron; \
+                    neutron_ns_metadata_proxy -> neutron; \
+            }';
+            var parsedData = vis.network.convertDot(DOTstring);
+            var data = {
+                    nodes: parsedData.nodes,
+                    edges: parsedData.edges
+            }
+            var options = parsedData.options;
+            // you can extend the options like a normal JSON variable:
+            /*
+            options.nodes = {
+                    color: 'red'
+            }*/
+            // create a network
+            var network = new vis.Network(container, data, options);
+    </script>
+  </body>
+</html>
