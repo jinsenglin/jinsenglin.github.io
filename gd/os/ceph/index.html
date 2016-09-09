@@ -13,7 +13,9 @@
   </head>
   <body>
     <div id="information">
-      <div></div>
+      <div>ceph_mon listens port 6789</div>
+      <div>ceph_mds listens port 6800-7300</div>
+      <div>ceph_osd listens port 6800-7300</div>
     </div>
     <div id="visualization"></div>
     <script>
@@ -25,6 +27,7 @@
                     ceph_radosgw -> ceph; \
                     ceph_osd -> ceph; \
                     ceph_mon -> ceph; \
+                    ceph_mds -> ceph; \
             }';
             var parsedData = vis.network.convertDot(DOTstring);
             var data = {
