@@ -17,7 +17,7 @@
             var DOTstring = 'dinetwork { \
                     keystone -> db_backend; \
                     keystone -> rpc_backend; \
-                    keystone -> frontend; \
+                    keystone -> http_frontend; \
                     glance -> db_backend; \
                     glance -> rpc_backend; \
                     glance -> keystone; \
@@ -36,24 +36,24 @@
                     ceilometer -> db_backend; \
                     ceilometer -> rpc_backend; \
                     ceilometer -> keystone; \
-                    ceilometer -> frontend; \
+                    ceilometer -> http_frontend; \
                     gnocchi -> db_backend; \
                     gnocchi -> rpc_backend; \
                     gnocchi -> keystone; \
-                    gnocchi -> frontend; \
+                    gnocchi -> http_frontend; \
                     gnocchi -> ceilometer; \
                     panko -> db_backend; \
                     panko -> rpc_backend; \
                     panko -> keystone; \
-                    panko -> frontend; \
+                    panko -> http_frontend; \
                     panko -> ceilometer; \
                     aodh -> db_backend; \
                     aodh -> rpc_backend; \
                     aodh -> keystone; \
-                    aodh -> frontend; \
+                    aodh -> http_frontend; \
                     aodh -> ceilometer; \
                     horizon -> keystone; \
-                    horizon -> frontend; \
+                    horizon -> http_frontend; \
                     grafana -> gnocchi; \
                     ntp; \
             }';
