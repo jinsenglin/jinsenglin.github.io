@@ -14,9 +14,11 @@
         data += "\nopenstack_dashboard/templates/base.html->horizon/templates/horizon/common/_sidebar.html: include";
         data += "\nhorizon/templates/horizon/common/_sidebar.html->horizon_nav: use";
         data += "\nhorizon_nav->can_access: invoke";
+        data += "\ncan_access->policy_rules: check";
         data += "\nhorizon_nav->accessible panels: output";
         data += "\nhorizon/templates/horizon/_sidebar.html->accessible panels: render";
         data += "\nhorizon/templates/horizon/_sidebar.html->has_permissions: use";
+        data += "\nhas_permissions->permissions: check";
         data += "\nhorizon/templates/horizon/_sidebar.html->has_permissions_on_list: use";
         data += "\nhas_permissions_on_list->has_permissions: invoke";
         data += "\nhorizon/templates/horizon/_sidebar.html->filtered panels: output";
