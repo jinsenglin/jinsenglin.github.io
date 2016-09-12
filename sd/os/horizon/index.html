@@ -10,11 +10,15 @@
     </div>
     <div id="diagram"></div>
       <script>
-        var data = "openstack_dashboard/templates/base.html->horizon/templates/horizon/common/_sidebar.html: include";
-        data += "\nhorizon/templates/horizon/common/_sidebar.html->horizon_nav: use"
-        data += "\nhorizon_nav->can_access: invoke"
-        data += "\nhorizon_nav->accessible panels: output"
-        data += "\nhorizon/templates/horizon/_sidebar.html->accessible panels: render"
+        var data = "browser->openstack_dashboard/templates/base.html: request";
+        data += "\nopenstack_dashboard/templates/base.html->horizon/templates/horizon/common/_sidebar.html: include";
+        data += "\nhorizon/templates/horizon/common/_sidebar.html->horizon_nav: use";
+        data += "\nhorizon_nav->can_access: invoke";
+        data += "\nhorizon_nav->accessible panels: output";
+        data += "\nhorizon/templates/horizon/_sidebar.html->accessible panels: render";
+        data += "\nhorizon/templates/horizon/_sidebar.html->has_permissions: use";
+        data += "\nhorizon/templates/horizon/_sidebar.html->has_permissions_on_list: use";
+        data += "\nhorizon/templates/horizon/_sidebar.html->browser: response";
         var diagram = Diagram.parse(data);
         diagram.drawSVG("diagram", {theme: 'hand'});
       </script>
