@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <script src="https://bramp.github.io/js-sequence-diagrams/js/raphael-min.js"></script>
+    <script src="https://bramp.github.io/js-sequence-diagrams/js/underscore-min.js"></script>
+    <script src="https://bramp.github.io/js-sequence-diagrams/js/sequence-diagram-min.js"></script>
+  </head>
+  <body>
+    <div id="info">
+      <div></div>
+    </div>
+    <div id="diagram"></div>
+      <script>
+        var data = "openstack_dashboard/templates/base.html->B: Message";
+        data += "\nB->C: Message"
+        data += "\nC->openstack_dashboard/templates/base.html: Message"
+        var diagram = Diagram.parse(data);
+        diagram.drawSVG("diagram", {theme: 'hand'});
+      </script>
+    </div>
+  </body>
+</html>
