@@ -18,6 +18,8 @@
         data += "\nhorizon/templates/horizon/_sidebar.html->accessible panels: render";
         data += "\nhorizon/templates/horizon/_sidebar.html->has_permissions: use";
         data += "\nhorizon/templates/horizon/_sidebar.html->has_permissions_on_list: use";
+        data += "\nhas_permissions_on_list->has_permissions: invoke";
+        data += "\nhorizon/templates/horizon/_sidebar.html->filtered panels: output";
         data += "\nhorizon/templates/horizon/_sidebar.html->browser: response";
         var diagram = Diagram.parse(data);
         diagram.drawSVG("diagram", {theme: 'simple'});
