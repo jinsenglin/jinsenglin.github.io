@@ -12,7 +12,7 @@
       <script>
         var data = "openstack_dashboard/templates/base.html->horizon/templates/horizon/common/_sidebar.html: include";
         data += "\nhorizon/templates/horizon/common/_sidebar.html->horizon_nav: use"
-        data += "\nhorizon_nav->can_access: use"
+        data += "\nhorizon_nav->can_access: invoke"
         data += "\nhorizon_nav->accessible panels: output"
         data += "\nhorizon/templates/horizon/_sidebar.html->accessible panels: render"
         var diagram = Diagram.parse(data);
