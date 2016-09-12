@@ -10,9 +10,9 @@
     </div>
     <div id="diagram"></div>
       <script>
-        var data = "openstack_dashboard/templates/base.html->B: Message";
-        data += "\nB->C: Message"
-        data += "\nC->openstack_dashboard/templates/base.html: Message"
+        var data = "openstack_dashboard/templates/base.html->horizon/templates/horizon/common/_sidebar.html: include";
+        data += "\nhorizon/templates/horizon/common/_sidebar.html->horizon_nav: use"
+        data += "\nhorizon/templates/horizon/_sidebar.html->horizon_nav: render"
         var diagram = Diagram.parse(data);
         diagram.drawSVG("diagram", {theme: 'hand'});
       </script>
