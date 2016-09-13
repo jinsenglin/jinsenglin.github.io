@@ -6,7 +6,8 @@
   </head>
   <body>
     <div id="info">
-      <div></div>
+      <div>openstack_dashboard/dashboards/project/stacks/panel.py 中明確宣告需要 permission 'openstack.services.orchestration'</div>
+      <div>has_permissions() 會比對當前 user 物件的 get_all_permissions() 內容是否包含 permission 'openstack.services.orchestration', 若找不到就無權使用</div>
     </div>
     <div id="diagram"></div>
       <script>
