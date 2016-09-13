@@ -8,7 +8,9 @@
     <div id="info">
       <div>openstack_dashboard/dashboards/project/stacks/panel.py 中明確宣告需要 permission 'openstack.services.orchestration'</div>
       <div>user.has_perm() 會比對當前 user 物件的 get_all_permissions() 內容是否包含 permission 'openstack.services.orchestration', 若找不到就無權使用</div>
-      <div>policy_check() 的實作是在 openstack_auth/policy.py 的 check(), 透過 settings.py 指定 POLICY_CHECK_FUNCTION 來關聯</div>
+      <div>user.has_perm() & get_all_permissions() 的實作是在 openstack_auth/backend.py</div>
+      <div>user.has_perms() 的實作是在 openstack_auth/user.py</div>
+      <div>policy_check() 的實作是在 openstack_auth/policy.py 的 check(), 透過 openstack_dashboard/settings.py 指定 POLICY_CHECK_FUNCTION 來關聯</div>
     </div>
     <div id="diagram"></div>
       <script>
