@@ -27,7 +27,22 @@
 			    hierarchical: {
 				    sortMethod: 'directed'
 			    }
-		    }
+		    },
+		    interaction: {
+			    dragNodes :false
+		    },
+		    physics: {
+			    enabled: false
+		    },
+		    configure: {
+			    filter: function (option, path) {
+				    if (path.indexOf('hierarchical') !== -1) {
+					    return true;
+				    }
+				    return false;
+			    },
+		    },
+		    showButton:false
 	    };
             // you can extend the options like a normal JSON variable:
             /*
