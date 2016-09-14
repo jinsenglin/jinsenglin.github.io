@@ -24,5 +24,4 @@ for pkg in pkgs:
     reqs = parse_requirements(txt, session=False)
     deps = [str(req.req.name) for req in reqs]
     for dep in deps:
-        print NAME + '->' + dep + ';\\'
-        # print '->'.join[NAME, dep]
+        print NAME + '->' + dep.replace('-', '_') + ';\\'

@@ -6,105 +6,103 @@
   </head>
   <body>
     <div id="information">
-      <div>db_backend e.g., mysql</div>
-      <div>rpc_backend e.g., rabbitmq</div>
-      <div>http_frontend e.g., apache (httpd)</div>
+        <div>'-' is replaced with '_'</div>
     </div>
     <div id="visualization"></div>
     <script>
             var container = document.getElementById('visualization');
             // provide data in the DOT language
 	    var DOTstring = 'dinetwork { \
-		    keystone->pbr;\
-		    keystone->WebOb;\
-		    keystone->eventlet;\
-		    keystone->greenlet;\
-		    keystone->PasteDeploy;\
-		    keystone->Paste;\
-		    keystone->Routes;\
-		    keystone->Routes;\
-		    keystone->cryptography;\
-		    keystone->six;\
-		    keystone->SQLAlchemy;\
-		    keystone->sqlalchemy-migrate;\
-		    keystone->stevedore;\
-		    keystone->passlib;\
-		    keystone->python-keystoneclient;\
-		    keystone->keystonemiddleware;\
-		    keystone->oslo.cache;\
-		    keystone->oslo.concurrency;\
-		    keystone->oslo.config;\
-		    keystone->oslo.context;\
-		    keystone->oslo.messaging;\
-		    keystone->oslo.db;\
-		    keystone->oslo.i18n;\
-		    keystone->oslo.log;\
-		    keystone->oslo.middleware;\
-		    keystone->oslo.policy;\
-		    keystone->oslo.serialization;\
-		    keystone->oslo.service;\
-		    keystone->oslo.utils;\
-		    keystone->oauthlib;\
-		    keystone->pysaml2;\
-		    keystone->dogpile.cache;\
-		    keystone->jsonschema;\
-		    keystone->pycadf;\
-		    keystone->msgpack-python;\
-		    nova->pbr;\
-		    nova->SQLAlchemy;\
-		    nova->boto;\
-		    nova->decorator;\
-		    nova->eventlet;\
-		    nova->Jinja2;\
-		    nova->keystonemiddleware;\
-		    nova->lxml;\
-		    nova->Routes;\
-		    nova->Routes;\
-		    nova->cryptography;\
-		    nova->pycrypto;\
-		    nova->WebOb;\
-		    nova->greenlet;\
-		    nova->PasteDeploy;\
-		    nova->Paste;\
-		    nova->PrettyTable;\
-		    nova->sqlalchemy-migrate;\
-		    nova->netaddr;\
-		    nova->netifaces;\
-		    nova->paramiko;\
-		    nova->Babel;\
-		    nova->iso8601;\
-		    nova->jsonschema;\
-		    nova->python-cinderclient;\
-		    nova->keystoneauth1;\
-		    nova->python-neutronclient;\
-		    nova->python-glanceclient;\
-		    nova->requests;\
-		    nova->six;\
-		    nova->stevedore;\
-		    nova->setuptools;\
-		    nova->websockify;\
-		    nova->oslo.cache;\
-		    nova->oslo.concurrency;\
-		    nova->oslo.config;\
-		    nova->oslo.context;\
-		    nova->oslo.log;\
-		    nova->oslo.reports;\
-		    nova->oslo.serialization;\
-		    nova->oslo.utils;\
-		    nova->oslo.db;\
-		    nova->oslo.rootwrap;\
-		    nova->oslo.messaging;\
-		    nova->oslo.policy;\
-		    nova->oslo.i18n;\
-		    nova->oslo.service;\
-		    nova->rfc3986;\
-		    nova->oslo.middleware;\
-		    nova->psutil;\
-		    nova->oslo.versionedobjects;\
-		    nova->alembic;\
-		    nova->os-brick;\
-		    nova->os-win;\
-		    nova->castellan;\
+keystone->pbr;\
+keystone->WebOb;\
+keystone->eventlet;\
+keystone->greenlet;\
+keystone->PasteDeploy;\
+keystone->Paste;\
+keystone->Routes;\
+keystone->Routes;\
+keystone->cryptography;\
+keystone->six;\
+keystone->SQLAlchemy;\
+keystone->sqlalchemy_migrate;\
+keystone->stevedore;\
+keystone->passlib;\
+keystone->python_keystoneclient;\
+keystone->keystonemiddleware;\
+keystone->oslo.cache;\
+keystone->oslo.concurrency;\
+keystone->oslo.config;\
+keystone->oslo.context;\
+keystone->oslo.messaging;\
+keystone->oslo.db;\
+keystone->oslo.i18n;\
+keystone->oslo.log;\
+keystone->oslo.middleware;\
+keystone->oslo.policy;\
+keystone->oslo.serialization;\
+keystone->oslo.service;\
+keystone->oslo.utils;\
+keystone->oauthlib;\
+keystone->pysaml2;\
+keystone->dogpile.cache;\
+keystone->jsonschema;\
+keystone->pycadf;\
+keystone->msgpack_python;\
+nova->pbr;\
+nova->SQLAlchemy;\
+nova->boto;\
+nova->decorator;\
+nova->eventlet;\
+nova->Jinja2;\
+nova->keystonemiddleware;\
+nova->lxml;\
+nova->Routes;\
+nova->Routes;\
+nova->cryptography;\
+nova->pycrypto;\
+nova->WebOb;\
+nova->greenlet;\
+nova->PasteDeploy;\
+nova->Paste;\
+nova->PrettyTable;\
+nova->sqlalchemy_migrate;\
+nova->netaddr;\
+nova->netifaces;\
+nova->paramiko;\
+nova->Babel;\
+nova->iso8601;\
+nova->jsonschema;\
+nova->python_cinderclient;\
+nova->keystoneauth1;\
+nova->python_neutronclient;\
+nova->python_glanceclient;\
+nova->requests;\
+nova->six;\
+nova->stevedore;\
+nova->setuptools;\
+nova->websockify;\
+nova->oslo.cache;\
+nova->oslo.concurrency;\
+nova->oslo.config;\
+nova->oslo.context;\
+nova->oslo.log;\
+nova->oslo.reports;\
+nova->oslo.serialization;\
+nova->oslo.utils;\
+nova->oslo.db;\
+nova->oslo.rootwrap;\
+nova->oslo.messaging;\
+nova->oslo.policy;\
+nova->oslo.i18n;\
+nova->oslo.service;\
+nova->rfc3986;\
+nova->oslo.middleware;\
+nova->psutil;\
+nova->oslo.versionedobjects;\
+nova->alembic;\
+nova->os_brick;\
+nova->os_win;\
+nova->castellan;\
             }';
             var parsedData = vis.network.convertDot(DOTstring);
             var data = {
