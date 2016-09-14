@@ -1,0 +1,11 @@
+{
+  "name": "os-pkg-deps",
+  "version": "0.0.1",
+  "author": "Jim Lin",
+  "contributors": [],
+  "devDependencies": {
+    "http-server": "*"
+  },
+  "dependencies": {
+  }
+}
