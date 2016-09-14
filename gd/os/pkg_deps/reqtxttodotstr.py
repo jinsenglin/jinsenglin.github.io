@@ -14,14 +14,20 @@ pkgs = [
     ('nova', 'openstack/nova', 'stable/mitaka'),
 ]
 
-for pkg in pkgs:
-    NAME, PROJECT, BRANCH = pkg
-    url = '/'.join([GITHUB, PROJECT, BRANCH, REQTXT])
+with open('docstr.js', 'w') as js_file:
+    js_file.write("var DOTstring = 'dinetwork { \\\n")
 
-    txt = '-'.join([NAME, REQTXT])
-    urllib.urlretrieve(url, txt)
+    for pkg in pkgs:
+        NAME, PROJECT, BRANCH = pkg
+        url = '/'.join([GITHUB, PROJECT, BRANCH, REQTXT])
 
-    reqs = parse_requirements(txt, session=False)
-    deps = [str(req.req.name) for req in reqs]
-    for dep in deps:
-        print NAME + '->' + dep.replace('-', '_') + ';\\'
+        txt = '-'.join([NAME, REQTXT])
+        urllib.urlretrieve(url, txt)
+
+        reqs = parse_requirements(txt, session=False)
+        deps = [str(req.req.name) for req in reqs]
+        for dep in deps:
+            js_file.write(NAME + '->' + dep.replace('-', '_') + ';\\\n')
+            print NAME + '->' + dep.replace('-', '_') + ';\\'
+
+    js_file.write("}';")
