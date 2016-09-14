@@ -1,8 +1,9 @@
 
 <html>
   <head>
-    <script src="docstr.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis.min.js"></script>
+    <script src="nodes.js"></script>
+    <script src="edges.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis.min.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
@@ -15,15 +16,13 @@
             // provide data in the DOT language
 	    // var DOTstring = 'dinetwork { \
             // }';
-            var parsedData = vis.network.convertDot(DOTstring);
+            //var parsedData = vis.network.convertDot(DOTstring);
             var data = {
-                    nodes: parsedData.nodes,
-                    edges: parsedData.edges
+                    nodes: nodes,
+                    edges: edges
             }
             //var options = parsedData.options;
 	    var options = {
-		    height: '200%',
-		    width: '200%',
 		    layout: {
 			    hierarchical: {
 				    sortMethod: 'directed'
