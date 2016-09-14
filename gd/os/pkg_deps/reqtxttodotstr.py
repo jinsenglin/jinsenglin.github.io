@@ -11,7 +11,13 @@ REQTXT = 'requirements.txt'
 
 pkgs = [
     ('keystone', 'openstack/keystone', 'stable/mitaka'),
+    ('glance', 'openstack/nova', 'stable/mitaka'),
     ('nova', 'openstack/nova', 'stable/mitaka'),
+    ('cinder', 'openstack/nova', 'stable/mitaka'),
+    ('neutron', 'openstack/nova', 'stable/mitaka'),
+    ('horizon', 'openstack/nova', 'stable/mitaka'),
+    ('swift', 'openstack/nova', 'stable/mitaka'),
+    ('ceilometer', 'openstack/nova', 'stable/mitaka'),
 ]
 
 with open('docstr.js', 'w') as js_file:

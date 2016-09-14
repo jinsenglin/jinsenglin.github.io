@@ -20,7 +20,16 @@
                     nodes: parsedData.nodes,
                     edges: parsedData.edges
             }
-            var options = parsedData.options;
+            //var options = parsedData.options;
+	    var options = {
+		    height: '200%',
+		    width: '200%',
+		    layout: {
+			    hierarchical: {
+				    sortMethod: 'directed'
+			    }
+		    }
+	    };
             // you can extend the options like a normal JSON variable:
             /*
             options.nodes = {
