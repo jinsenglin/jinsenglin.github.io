@@ -18,7 +18,7 @@ pkgs = [
     ('neutron', 'openstack/nova', 'stable/mitaka', '#6E6EFD'),
     ('horizon', 'openstack/nova', 'stable/mitaka', '#C2FABC'),
     ('swift', 'openstack/nova', 'stable/mitaka', '#FFA807'),
-    ('ceilometer', 'openstack/nova', 'stable/mitaka', '#6E6EFD'),
+    ('ceilometer', 'openstack/nova', 'stable/mitaka', '#9400D3'),
 ]
 
 with open('nodes.js', 'w') as nodes_file, open('edges.js', 'w') as edges_file:

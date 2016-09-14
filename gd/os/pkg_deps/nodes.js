@@ -6,7 +6,7 @@ var nodes = new vis.DataSet([
 {id: 'neutron', label: 'neutron', color:'#6E6EFD'},
 {id: 'horizon', label: 'horizon', color:'#C2FABC'},
 {id: 'swift', label: 'swift', color:'#FFA807'},
-{id: 'ceilometer', label: 'ceilometer', color:'#6E6EFD'},
+{id: 'ceilometer', label: 'ceilometer', color:'#9400D3'},
 {id: 'os_brick', label: 'os_brick'},
 {id: 'alembic', label: 'alembic'},
 {id: 'PasteDeploy', label: 'PasteDeploy'},
