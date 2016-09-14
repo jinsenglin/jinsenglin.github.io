@@ -10,8 +10,8 @@
       <div>user.has_perm() 會比對當前 user 物件的 get_all_permissions() 內容是否包含 permission 'openstack.services.orchestration', 若找不到就無權使用</div>
       <div>user.has_perm() & get_all_permissions() 的實作在 openstack_auth/backend.py</div>
       <div>user.has_perms() 的實作在 openstack_auth/user.py</div>
-      <div>policy_check() 的實作在 openstack_auth/policy.py 的 check(), 透過 openstack_dashboard/settings.py 指定 POLICY_CHECK_FUNCTION 來關聯</div>
-      <div>enforce() 的實作在 oslo_policy/policy.py</div>
+      <div>policy_check() 的實作在 <a href="https://github.com/openstack/django_openstack_auth/blob/stable/mitaka/openstack_auth/policy.py#L71">openstack_auth/policy.py 的 check()</a>, 透過 openstack_dashboard/settings.py 指定 POLICY_CHECK_FUNCTION 來關聯</div>
+      <div><a href="https://github.com/openstack/oslo.policy/blob/stable/mitaka/oslo_policy/policy.py#L515">enforce() 的實作在 oslo_policy/policy.py</a></div>
     </div>
     <div id="diagram"></div>
       <script>
