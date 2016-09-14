@@ -6,6 +6,25 @@
   </head>
   <body>
     <div id="info">
+      <pre>
+        > /Volumes/120GB/djangos/horizon/.venv/lib/python2.7/site-packages/openstack_auth/policy.py(150)check()
+        -> for action in actions:
+        (Pdb) p actions
+        (('identity', 'identity:list_projects'),)
+        (Pdb) p request
+        <WSGIRequest: GET '/identity/'>
+        (Pdb) p target
+        {'user_id': u'ebf433f6267d45b4912ccd94a69a0d44', 'user.domain_id': None, 'tenant_id': u'5b5a31669246410b8736f894dcf293f5', 'group.domain_id': None, 'project.domain_id': None, 'project_id': u'5b5a31669246410b8736f894dcf293f5', 'domain_id': None}
+        (Pdb) c
+        > /Volumes/120GB/djangos/horizon/.venv/lib/python2.7/site-packages/oslo_policy/policy.py(635)enforce()
+        -> if isinstance(rule, _checks.BaseCheck):
+        (Pdb) p rule
+        'identity:list_projects'
+        (Pdb) p target
+        {'user_id': u'ebf433f6267d45b4912ccd94a69a0d44', 'user.domain_id': None, 'tenant_id': u'5b5a31669246410b8736f894dcf293f5', 'group.domain_id': None, 'project.domain_id': None, 'project_id': u'5b5a31669246410b8736f894dcf293f5', 'domain_id': None}
+        (Pdb) p creds
+        {'username': u'admin', 'token': <openstack_auth.user.Token object at 0x109a73510>, 'project_name': u'admin', 'user_id': u'ebf433f6267d45b4912ccd94a69a0d44', 'roles': [u'admin'], 'is_admin': True, 'tenant_id': u'5b5a31669246410b8736f894dcf293f5', 'project_id': u'5b5a31669246410b8736f894dcf293f5', 'domain_id': None}
+      </pre>
       <div>openstack_dashboard/dashboards/project/stacks/panel.py 中明確宣告需要 permission 'openstack.services.orchestration'</div>
       <div>user.has_perm() 會比對當前 user 物件的 get_all_permissions() 內容是否包含 permission 'openstack.services.orchestration', 若找不到就無權使用</div>
       <div>user.has_perm() & get_all_permissions() 的實作在 openstack_auth/backend.py</div>
